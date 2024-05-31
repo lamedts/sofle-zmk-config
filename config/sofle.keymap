@@ -14,7 +14,6 @@
 #define ADJUST 3
 
 / {
-
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -29,39 +28,34 @@
 
         default_layer {
             display-name = "default";
-
             bindings = <
 &kp ESC    &kp N1  &kp N2            &kp N3    &kp N4    &kp N5                           &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp BACKSPACE
 &kp TAB    &kp Q   &kp W             &kp E     &kp R     &kp T                            &kp Y   &kp U     &kp I      &kp O    &kp P     &none
 &kp CAPS   &kp A   &kp S             &kp D     &kp F     &kp G                            &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X             &kp C     &kp V     &kp B   &kp C_MUTE    &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&kp LSHFT  &kp Z   &kp X             &kp C     &kp V     &kp B   &kp C_PLAY    &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                    &kp LEFT_CONTROL  &kp LALT  &kp LGUI  &mo 1   &kp RET       &kp SPACE  &mo 2   &kp RGUI  &kp RALT   &none
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+                <&inc_dec_kp K_SCROLL_UP C_AC_SCROLL_UP>,
+                <&inc_dec_kp C_FAST_FORWARD K_SCROLL_DOWN>;
         };
 
         lower_layer {
             display-name = "lower";
-
             bindings = <
-&none      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                            &kp F6     &kp F7    &kp F8            &kp F9             &kp F10   &kp F11
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                            &kp N6     &kp N7    &kp N8            &kp N9             &kp N0    &kp F12
-&none      &none   &none   &none   &none   &none                             &kp LEFT   &kp DOWN  &kp UP            &kp RIGHT          &none     &none
-&none      &none   &none   &none   &none   &none   &kp K_MUTE    &kp C_PLAY  &kp MINUS  &kp PLUS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &none
-                   &none   &none   &none   &none   &none         &none       &none      &none     &none             &none
+&none      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                       &kp F6     &kp F7    &kp F8            &kp F9             &kp F10   &kp F11
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                       &kp N6     &kp N7    &kp N8            &kp N9             &kp N0    &kp F12
+&none      &none   &none   &none   &none   &none                        &kp LEFT   &kp DOWN  &kp UP            &kp RIGHT          &none     &none
+&none      &none   &none   &none   &none   &none   &kp K_MUTE    &none  &kp MINUS  &kp PLUS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &none
+                   &none   &none   &none   &none   &none         &none  &none      &none     &none             &none
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp C_FAST_FORWARD C_REWIND>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         raise_layer {
             display-name = "raise";
-
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
 &none       &kp INS       &kp PSCRN     &kp K_CMENU   &none         &none                         &none  &none  &none  &none  &none  &none
