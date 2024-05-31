@@ -14,14 +14,7 @@
 #define ADJUST 3
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        adjust_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -37,21 +30,21 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_SCROLL_UP C_AC_SCROLL_UP>,
-                <&inc_dec_kp C_FAST_FORWARD K_SCROLL_DOWN>;
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp LEFT RIGHT>;
         };
 
         lower_layer {
             display-name = "lower";
             bindings = <
-&none      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                       &kp F6     &kp F7    &kp F8            &kp F9             &kp F10   &kp F11
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                       &kp N6     &kp N7    &kp N8            &kp N9             &kp N0    &kp F12
-&none      &none   &none   &none   &none   &none                        &kp LEFT   &kp DOWN  &kp UP            &kp RIGHT          &none     &none
-&none      &none   &none   &none   &none   &none   &kp K_MUTE    &none  &kp MINUS  &kp PLUS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &none
-                   &none   &none   &none   &none   &none         &none  &none      &none     &none             &none
+&none      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6     &kp F7    &kp F8            &kp F9             &kp F10   &kp F11
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                  &kp N6     &kp N7    &kp N8            &kp N9             &kp N0    &kp F12
+&none      &none   &none   &none   &none   &none                   &kp LEFT   &kp DOWN  &kp UP            &kp RIGHT          &none     &none
+&none      &none   &none   &none   &none   &none   &none    &none  &kp MINUS  &kp PLUS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &none
+                   &none   &none   &none   &none   &none    &none  &none      &none     &none             &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         raise_layer {
@@ -63,8 +56,6 @@
 &none       &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &none         &none    &none  &none  &none  &none  &none  &none  &none
                           &none         &none         &none         &none         &none    &none  &none  &none  &none  &none
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
