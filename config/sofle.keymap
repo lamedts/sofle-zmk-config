@@ -28,6 +28,16 @@
             bindings = <&tog 2>;
             key-positions = <36 56>;
         };
+
+        to-1 {
+            bindings = <&tog 1>;
+            key-positions = <53 49>;
+        };
+
+        to-2 {
+            bindings = <&tog 2>;
+            key-positions = <56 49>;
+        };
     };
 
     keymap {
