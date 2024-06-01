@@ -22,21 +22,25 @@
         toggle-lower {
             bindings = <&tog 1>;
             key-positions = <36 53>;
+            timeout-ms = <50>;
         };
 
         toggle-raise {
             bindings = <&tog 2>;
             key-positions = <36 56>;
+            timeout-ms = <50>;
         };
 
         to-1 {
             bindings = <&tog 1>;
             key-positions = <53 49>;
+            timeout-ms = <50>;
         };
 
         to-2 {
             bindings = <&tog 2>;
             key-positions = <56 49>;
+            timeout-ms = <50>;
         };
     };
 
